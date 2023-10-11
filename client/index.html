@@ -1,0 +1,120 @@
+<!-- <!DOCTYPE html>-->
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdn.jsdelivr.net/npm/@metamask/detect-provider"></script>
+  <script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.11/dist/interact.min.js"></script>
+  <title>Fishing Game</title>
+  <link rel="stylesheet" href="./fish.css">
+  <link rel="stylesheet" href="./menu.css">
+  <link rel="stylesheet" href="./quiz.css">
+  <!-- <link rel="stylesheet" href="./image.css"> -->
+</head>
+<body>
+  <div id="Form">
+  <div class="dropdown">
+    <button class="dropdown-toggle">メニュー</button>
+    <div class="dropdown-content">
+        <button type="button" onclick="user(0)">ユーザ登録</button><br>
+        <button type="button" onclick="user(1)">ログイン</button>
+        <button type="button" onclick="user(2)">パスワード変更</button>
+    </div>
+  </div>
+    <div id="registerForm" class="hidden">
+        <h2>Register Form</h2>
+        <form>
+            <label for="regUsername">Select User:</label>
+            <select id="regUsername"></select><br>
+        
+            <label for="regPassword">Password:</label>
+            <input type="password" id="regPassword" required><br>
+        
+            <label for="regConfirmPassword">Confirm Password:</label>
+            <input type="password" id="regConfirmPassword" required><br>
+        
+            <button type="button" onclick="registerUser()">Register</button>
+            <!-- <button type="button" onclick="toggleForms()">Register</button> -->
+        </form>
+    </div>
+    
+    <div id=loginForm class="hidden">
+        <h2>Login Form</h2>
+        <form >
+            <label for="loginUsername">Username:</label>
+            <select id="loginUsername"></select><br>
+        
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" required><br>
+        
+            <button type="button" onclick="loginUser()">Login</button>
+            <!-- <button type="button" onclick="toggleForms()">Register</button> -->
+        </form>
+    </div>
+    
+    <div id="changeForm" class="hidden">
+        <h2>Change Password Form</h2>
+        <form>
+            <label for="changeUsername">Username:</label>
+            <select id="changeUsername"></select><br>
+        
+            <label for="currentPassword">Current Password:</label>
+            <input type="password" id="currentPassword" required><br>
+        
+            <label for="newPassword">New Password:</label>
+            <input type="password" id="newPassword" required><br><br>
+        
+            <button type="button" onclick="changePassword()">Change Password</button>
+        </form>
+    </div>   
+    </div>
+  
+  <div  id = "quiz" class="container">
+    <h1 id="res">魚に関するクイズ</h1>
+    <p id="question"></p>
+    <div id="options">
+        <!-- Options will be generated dynamically using JavaScript -->
+    </div>
+    <p id="score">スコア: 0</p>
+    <p id="timer">制限時間: 30秒</p>
+  </div>
+
+  <div class="Fishing">
+    <h1>Fishing Game</h1>
+    <p id="accountBalance"></p>
+    <p id="tokenBalance"></p>
+    <button id="NormalRod" onclick="buyRod(0.1)">Buy NormalRod</button>
+    <button id="SuperRod" onclick="buyRod(1.0)">Buy SuperRod</button>
+    <button id="Fish" onclick="goFishing()">Go Fishing</button>
+    <label for="accountSelect">Select an account:</label>
+    <select id="accountSelect"></select>
+    <br>  
+  </div>
+  <div id="Account">
+    <p id="account0"></p>
+    <p id="account1"></p>
+    <p id="account2"></p>
+  </div>
+
+    <p id="result"></p>
+
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"><path id="wave" d=""/></svg>
+    <img class="fish" data-order="right" id="buri" src="./img/buri.png" alt="buri"  width="100" height="200">
+    <img class="fish" data-order="right" id="ginyugoi" src="./img/ginyugoi.png" alt="ginyugoi" width="100" height="200" >
+    <img class="fish" data-order="left" id="hatanbo" src="./img/hatanbo.png" alt="hatanbo" width="100" height="200" >
+    <img class="fish" data-order="right" id="iwana" src="./img/iwana.png" alt="iwana" width="100" height="200" >
+    <img class="fish" data-order="left" id="same" src="./img/same.png" alt="same" width="100" height="200" >
+    <div id="imageContainer"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/85188/jquery.wavify.js"></script>
+    <script src="web3.min.js"></script>
+    <script src="wave.js"></script>
+    <script src="token.js"></script>
+    <script src="quiz.js"></script>
+    <script src="imagelotate.js"></script>
+    <script src="visiblebutton.js"></script>
+    <script src="database.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

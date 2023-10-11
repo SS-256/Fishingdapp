@@ -1,0 +1,16 @@
+.container {
+    z-index: 2;
+    position:absolute;
+    left: 10%;
+    top: 0%;
+    font-size: 200%;
+  } 
+#score {
+    z-index: 2;
+    font-weight: bold;
+  }
+  
+#timer {
+    font-weight: bold;
+}
+

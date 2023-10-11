@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css?family=Merienda');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+
+#imageContainer {
+  margin-top: 350px;
+  height: 100vh;
+  width: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+svg {
+  margin-top: 200px;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+#buri, #ginyugoi, #hatanbo, #iwana, #same {
+ 
+  position: absolute;
+
+  z-index: 3;
+  width: 100px;
+  height: 200px;
+}
+
+
+
+#buri {
+  top: 300px;
+  
+  animation-duration: 13s;
+  
+  }
+
+#ginyugoi {
+  top: 400px;
+  animation-duration: 11s;
+}
+
+#hatanbo{
+  top: 500px;
+  animation-duration: 9s;
+}
+
+#iwana{
+  top: 600px;
+  animation-duration: 7s;
+}
+
+#same{
+  top: 700px;
+  animation-duration: 5s;
+}
+
+[data-order="right"]{
+  transform: rotateY(180deg);
+}
+
+
+
+.fish[data-order="left"] {
+  animation-name: GoLeft;
+}
+
+.fish[data-order="right"] {
+  animation-name: GoRight;
+}
+
+@keyframes GoLeft {
+  0% {
+    right: 10%;
+  }
+  100% {
+    right: 90%;
+  }
+}
+
+@keyframes GoRight {
+  0% {
+    right: 90%;
+  }
+  100% {
+    right: 10%;
+  }
+}
+
+@keyframes upDown {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 30px;
+  }
+}
+
+  html {
+    background-color: #cdecfa;
+ 
+  }
+  
+  .Fishing{
+    top: 10px;
+    font-family: 'Merienda', cursive;
+    text-align:center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  button{
+    padding: 10px;
+  }
+
+
+  h1, h2 {
+    color: #333;
+  }
+  
+  #balance, #shop, #fishing, #fishResult {
+    margin-bottom: 20px;
+  }
+
+  .fishes {
+    z-index: 1;
+    margin-top: 200px;
+    animation-iteration-count: infinite;
+    animation-direction:alternate;
+  }
+
+   #result{
+    font-size: 20vw;
+    font-size: 20vh;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  } 
+
+  
+
+
+
+button:hover {
+    background-color: #45a049;
+}
+
+
+
+#startButton {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #2196F3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#startButton:hover {
+    background-color: #1976D2;
+}
+
+#Account {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  text-align: right;
+  font-size: 18px;
+}
+  
+#Account p {
+  margin: 5px 0;
+}
+
+#Form {
+  z-index: 2;
+    position:absolute;
+    top: 0%;
+    font-size: 100%;
+}
+
+
+
