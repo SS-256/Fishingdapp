@@ -315,9 +315,9 @@ const clickListener = function(event) {
       }
       var image = document.createElement('img');
       if(Rodtype == 0.1){
-        image.src = './client/img/lure.png';  // エサの画像(normal rod)
+        image.src = './img/lure.png';  // エサの画像(normal rod)
       }else{
-        image.src = './client/img/ikura.png';  // エサの画像(super rod)
+        image.src = './img/ikura.png';  // エサの画像(super rod)
       }
       image.style.position = 'absolute'; // 画像の位置を指定
       image.style.width = '50px'; // 画像の幅を指定
