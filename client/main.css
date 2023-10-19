@@ -1,0 +1,17 @@
+button{
+    background: rgb(100, 206, 206);
+    font-family: 'Merienda', cursive;
+    width: 180px;
+  }
+
+button:hover {
+    background-color: #45a049;
+}
+
+select{
+    background-color: rgb(100, 206, 206);
+}
+
+input{
+    background-color: rgb(100, 206, 206);
+}

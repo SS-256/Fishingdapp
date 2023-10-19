@@ -67,7 +67,7 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.4;\n\ninterface ERC20 {\n    \n     /**\n     * @dev returns the tokens owned by `account`.\n     */\n    function balanceOf(address account) external view returns (uint256);\n\n     /**\n     * @dev returns the decimal places of a token\n     */\n    function decimals() external view returns (uint8);\n\n    /**\n     * @dev transfers the `amount` of tokens from caller's account\n     * to the `recipient` account.\n     *\n     * returns boolean value indicating the operation status.\n     *\n     * Emits a {Transfer} event\n     */\n    function transfer(address recipient, uint256 amount)\n        external\n        returns (bool);\n \n}\n\ncontract Fishing {\n    \n    // The underlying token of the fish\n    ERC20 token;\n    \n    // The address of the fish owner\n    address owner;\n    \n    // For rate limiting\n    mapping(address=>uint256) nextRequestAt;\n    \n    // No.of tokens to send when requested\n    uint256 fishDripAmount = 1;\n    \n    // Sets the addresses of the Owner and the underlying token\n    constructor (address _fishAddress, address _ownerAddress) {\n        token = ERC20(_fishAddress);\n        owner = _ownerAddress;\n    }   \n    \n    // Verifies whether the caller is the owner \n    modifier onlyOwner{\n        require(msg.sender == owner,\"fishError: Caller not owner\");\n        _;\n    }\n    \n    // Sends the amount of token to the caller.\n    function send() external {\n        require(token.balanceOf(address(this)) > 1,\"fishError: Empty\");\n        require(nextRequestAt[msg.sender] < block.timestamp, \"fishError: Try again later\");\n        \n        // Next request from the address can be made only after 5 minutes         \n        nextRequestAt[msg.sender] = block.timestamp + (5 minutes); \n        \n        token.transfer(msg.sender,fishDripAmount * 10**token.decimals());\n    }  \n    \n    // Updates the underlying token address\n     function setTokenAddress(address _tokenAddr) external onlyOwner {\n        token = ERC20(_tokenAddr);\n    }    \n    \n    // Updates the drip rate\n     function setfishDripAmount(uint256 _amount) external onlyOwner {\n        fishDripAmount = _amount;\n    }  \n     \n     \n     // Allows the owner to withdraw tokens from the contract.\n     function withdrawTokens(address _receiver, uint256 _amount) external onlyOwner {\n        require(token.balanceOf(address(this)) >= _amount,\"fishError: Insufficient funds\");\n        token.transfer(_receiver,_amount);\n    }    \n}",
-  "sourcePath": "/home/iniad/test/contracts/Fishing.sol",
+  "sourcePath": "/home/iniad/fishingdapp/contracts/Fishing.sol",
   "ast": {
     "absolutePath": "project:/contracts/Fishing.sol",
     "exportedSymbols": {
@@ -2366,7 +2366,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.14",
-  "updatedAt": "2023-09-19T09:34:21.037Z",
+  "updatedAt": "2023-10-19T10:00:43.197Z",
   "devdoc": {
     "kind": "dev",
     "methods": {

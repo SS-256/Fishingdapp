@@ -105,7 +105,7 @@ const question2 = questions.slice();
 
 const totalQuestions = 20;
 //const questionsToAnswer = 5;
-const normaltimeLimit = 30; // seconds
+const normaltimeLimit = 10000; // seconds
 const supertimeLimit = 15;
 
 let currentQuestion = Math.floor(Math.random() * questions.length);
@@ -158,7 +158,7 @@ function displayQuestion() {
     
     questionElement.textContent = questions[currentQuestion].question;
 
-    const optionsElement = document.getElementById("options");
+    const optionsElement = document.getElementById("choices");
     optionsElement.innerHTML = "";
     questions[currentQuestion].options.forEach((option, index) => {
         const button = document.createElement("button");
@@ -208,7 +208,7 @@ function endQuiz() {
 
     //scoreElement.textContent = `クイズ終了！ スコア: ${score} / ${questionsToAnswer}`;
     scoreElement.textContent = `クイズ終了！ スコア: ${score}`;
-    const optionsElement = document.getElementById("options");
+    const optionsElement = document.getElementById("choices");
     optionsElement.innerHTML = "";
     questionElement.innerHTML = "";
 

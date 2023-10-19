@@ -177,9 +177,9 @@ window.addEventListener('load', async () => {
 });
 
 const accountData = {
-  "0x5C5fC0C71B3dbA48dB11cE94fab9DAb2fc6275A9": "アカウント1",
-  "0x94da82206297Ce34fb00DA086FAA8b4ae4b61663": "アカウント2",
-  "0xbC23F450c480E56115aA36d7970F900a772eDA21": "アカウント3",
+  "0x5C5fC0C71B3dbA48dB11cE94fab9DAb2fc6275A9": "Account1",
+  "0x94da82206297Ce34fb00DA086FAA8b4ae4b61663": "Account2",
+  "0xbC23F450c480E56115aA36d7970F900a772eDA21": "Account3",
 };
 
 // Initialize web3 provider

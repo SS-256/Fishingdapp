@@ -1,16 +1,19 @@
 .container {
-    z-index: 2;
+    z-index: 4;
     position:absolute;
-    left: 10%;
-    top: 0%;
-    font-size: 200%;
+    left: 30%;
+    top: 20%;
+    font-size: 150%;
+    font-family: 'Merienda', cursive;
   } 
 #score {
-    z-index: 2;
+    z-index: 4;
     font-weight: bold;
   }
   
 #timer {
     font-weight: bold;
 }
+
+
 
